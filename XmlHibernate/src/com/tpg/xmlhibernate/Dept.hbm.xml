@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC         
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"         
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">   
+<hibernate-mapping package="com.tpg.xmlhibernate">       
+<class name="Dept" table="DEPARTMENT">           
+	<id name="departmentId" column="DEPARTMENT_ID" > </id>                   
+	<property name="departmentName" column="DEPARTMENT_NAME"/>           
+	<set name="emps" table="employee" inverse="true" lazy="true" fetch="select">             
+		<key>                 
+			<column name="department_id" not-null="true" />             
+		</key>             
+		<one-to-many class="com.tpg.xmlhibernate.Emp" />         
+	</set>                       
+</class> 
+</hibernate-mapping> 

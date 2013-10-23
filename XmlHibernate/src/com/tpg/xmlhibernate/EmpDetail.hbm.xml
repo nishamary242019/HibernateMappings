@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC         
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"         
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">   
+<hibernate-mapping package="com.tpg.xmlhibernate">       
+
+<class name="EmpDetail" table="EMP_DETAILS">           
+	<id name="id">             
+		<column name="ID" />                
+	</id>         
+	<one-to-one name="emp" class="com.tpg.xmlhibernate.Emp"            
+		constrained="true"></one-to-one>                   
+		<property name="street" column="STREET"/>         
+		<property name="state" column="STATE"/>         
+		<property name="country" column="COUNTRY"/>     
+</class>   
+
+</hibernate-mapping> 
+
+		
